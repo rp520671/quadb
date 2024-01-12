@@ -10,7 +10,7 @@ function App() {
     <BrowserRouter>
       <Link to="/">
         <Card className='sticky-nav'>
-          <h1 className='text-center m-2'>
+          <h1 className='text-center m-2' style={{ color: "red", fontStyle: "italic", fontWeight: "Bold", fontFamily: "ubuntu" }}>
             Show Booking
           </h1>
         </Card>
