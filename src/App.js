@@ -1,24 +1,25 @@
-import logo from './logo.svg';
+import { Card } from 'react-bootstrap';
+import { BrowserRouter, Link, Route, Routes } from 'react-router-dom';
 import './App.css';
+import MovieBookingPage from './Pages/MovieBookingPage';
+import MoviesPage from './Pages/MoviesPage';
 
 function App() {
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+      <Link to="/">
+        <Card className='sticky-nav'>
+          <h1 className='text-center m-2'>
+            Show Booking
+          </h1>
+        </Card>
+      </Link>
+      <Routes>
+        <Route exact path='/' element={<MoviesPage />} />
+        <Route exact path='/bookmovie/:id' element={<MovieBookingPage />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 
